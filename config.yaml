@@ -1,0 +1,80 @@
+initial_settings:
+  target_sample_size: 240 # Total articles/items to select
+  random_seed: 2025 # Set for reproducibility (or use null for random)
+  input_file: 'articles.xlsx' # Your data file (Excel or CSV)
+  output_file: 'sampled_output.xlsx'
+
+category_groups:
+  description: 'Political bias classification'
+  column_name: 'Source'
+
+  categories:
+    Left:
+      - 'The New York Times'
+      - 'New York Times'
+      - 'nytimes.com'
+      - 'The Washington Post'
+      - 'Washington Post'
+      - 'CNN'
+      - 'MSNBC'
+      - 'The Guardian'
+      - 'HuffPost'
+      - 'Los Angeles Times'
+      - 'The Atlantic'
+      - 'Vox'
+
+    Center:
+      - 'NPR'
+      - 'PBS NewsHour'
+      - 'USA Today'
+      - 'Axios'
+      - 'Wall Street Journal'
+      - 'WSJ'
+      - 'CBS News'
+      - 'NBC News'
+      - 'ABC News'
+      - 'Politico'
+      - 'Reuters'
+      - 'Associated Press'
+
+    Right:
+      - 'Fox News'
+      - 'New York Post'
+      - 'The Washington Times'
+      - 'Daily Mail'
+      - 'Washington Examiner'
+      - 'Breitbart'
+
+time_periods:
+  description: 'Presidential administrations'
+  column_name: 'Date'
+  date_format: '%Y-%m-%d'
+
+  periods:
+    Obama:
+      start: '2012-01-01'
+      end: '2017-01-19'
+
+    Trump_1:
+      start: '2017-01-20'
+      end: '2021-01-19'
+
+    Biden:
+      start: '2021-01-20'
+      end: '2025-01-19'
+
+    Trump_2:
+      start: '2025-01-20'
+      end: '2025-12-31'
+
+output_options:
+  include_columns:
+    - 'Title'
+    - 'Source'
+    - 'Date'
+    - 'URL'
+    - 'Political_Bias'
+    - 'Administration'
+
+  sort_by: 'Date'
+  sort_ascending: true
